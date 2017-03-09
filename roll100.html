@@ -11,8 +11,8 @@
 <nav class="nav">
 	<ul>
 		<li><a href="">MONO</a></li>
-		<li><a href="./roll100.html">SKILL</a></li>
-		<li><a href="./skill.html">ROLL100</a></li>
+		<li><a href="./skill.html">SKILL</a></li>
+		<li><a href="./roll100.html">ROLL100</a></li>
 		<li><a href="./index.html">DATA</a></li>
 	</ul>
 </nav>
@@ -22,7 +22,7 @@
 <div class="diceButton" id="diceTwo"></div>
 
 </div>
-<input type="button" value="ROLL MY DATA" class="myButton" id="dataRoll">
+<input type="button" value="ROLL MY D100" class="myButton" id="dataRoll">
 <script type="text/javascript" src="./js/RollData.js"></script>
 <script type="text/javascript">
      function addData(id, attrVal){
@@ -30,7 +30,7 @@
      }
 
      $(".myButton").click(function(){
-     	console.log("it is working")
+     	// console.log("it is working")
      	var diceRolling = setInterval(function(){
      		addData("diceOne", nDice(1,10)-1);
      		addData("diceTwo", nDice(1,10)-1);

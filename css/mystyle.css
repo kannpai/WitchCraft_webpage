@@ -52,7 +52,7 @@ nav ul li+li {
 table.data {
 	position: absolute;
 	top: 30px;
-	left: 28%;
+	left: 36%;
 
 }
 
@@ -119,12 +119,18 @@ table.data>td {
 
 #diceOne {
 	position: absolute;
-	left: 120px;
+	left: 36%;
 	top: 150px;
 }
 
 #diceTwo {
 	position: absolute;
-	left: 300px;
+	left: 56%;
 	top: 150px;
+}
+
+@media screen and (max-width: 420px) {
+    body {
+        background-color:lightblue;
+    }
 }

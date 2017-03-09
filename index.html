@@ -18,6 +18,11 @@
 </nav>
 <div class="page">
 <table class="data">
+	<colgroup>
+		<col width="100px">
+		<col width="100px">
+		<col width="100px">
+	</colgroup>
 	<tr>
 		<td>STR: <span id="str"></span></td>
 		<td>CON: <span id="con"></span></td>
@@ -42,15 +47,27 @@
      	$("#" + id).html(attrVal);
      }
 
-     addData("str", nDice(3,6));
-     addData("con", nDice(3,6));
-     addData("pow", nDice(3,6));
-     addData("dex", nDice(3,6));
-     addData("app", nDice(3,6));
-     addData("siz", nDice(2,6) + 6);
-     addData("int", nDice(2,6) + 6);
-     addData("edu", nDice(3,6) + 6);
-     addData("mon", nDice(1,10));
+     function attrAdd(){
+	     addData("str", nDice(3,6));
+	     addData("con", nDice(3,6));
+	     addData("pow", nDice(3,6));
+	     addData("dex", nDice(3,6));
+	     addData("app", nDice(3,6));
+	     addData("siz", nDice(2,6) + 6);
+	     addData("int", nDice(2,6) + 6);
+	     addData("edu", nDice(3,6) + 6);
+	     addData("mon", nDice(1,10));
+     }
+     $(".myButton").click(function(){
+     	    var diceRolling = setInterval(function(){
+     	    attrAdd();
+     	}, 30)
+     	setTimeout(function(){
+     		clearInterval(diceRolling);
+     	    attrAdd();
+     	}, 800)
+
+     });
 
 </script>
 </body>
