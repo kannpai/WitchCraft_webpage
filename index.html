@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>COC Helper</title>
+	<script type="text/javascript" src="./js/jquery-3.1.0.js"></script>
+	<link rel="stylesheet" href="css/normalize.css" type="text/css"/>
+	<link rel="stylesheet" href="css/mystyle.css" type="text/css"/>
+</head>
+<body>
+<nav class="nav">
+	<ul>
+		<li><a href="">MONO</a></li>
+		<li><a href="./skill.html">SKILL</a></li>
+		<li><a href="./roll100.html">ROLL100</a></li>
+		<li><a href="./index.html">DATA</a></li>
+	</ul>
+</nav>
+<div class="page">
+<table class="data">
+	<tr>
+		<td>STR: <span id="str"></span></td>
+		<td>CON: <span id="con"></span></td>
+		<td>SIZ: <span id="siz"></span></td>
+	</tr>
+	<tr>
+		<td>INT: <span id="int"></span></td>
+		<td>POW: <span id="pow"></span></td>
+		<td>DEX: <span id="dex"></span></td>
+	</tr>
+	<tr>
+		<td>APP: <span id="app"></span></td>
+		<td>EDU: <span id="edu"></span></td>
+		<td>MON: <span id="mon"></span></td>
+	</tr>
+</table>
+</div>
+<input type="button" value="ROLL MY DATA" class="myButton" id="dataRoll">
+<script type="text/javascript" src="./js/RollData.js"></script>
+<script type="text/javascript">
+     function addData(id, attrVal){
+     	$("#" + id).html(attrVal);
+     }
+
+     addData("str", nDice(3,6));
+     addData("con", nDice(3,6));
+     addData("pow", nDice(3,6));
+     addData("dex", nDice(3,6));
+     addData("app", nDice(3,6));
+     addData("siz", nDice(2,6) + 6);
+     addData("int", nDice(2,6) + 6);
+     addData("edu", nDice(3,6) + 6);
+     addData("mon", nDice(1,10));
+
+</script>
+</body>
+</html>
