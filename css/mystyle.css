@@ -130,7 +130,25 @@ table.data>td {
 }
 
 @media screen and (max-width: 420px) {
-    body {
-        background-color:lightblue;
-    }
+
+	table.data {
+	left: 4%;
+	}
+
+	nav ul li {
+	width: 24%;
+	}
+
+	#diceOne {
+	position: absolute;
+	left: 12%;
+	top: 150px;
+	}
+
+	#diceTwo {
+	position: absolute;
+	left: 52%;
+	top: 150px;
+	}
+
 }
