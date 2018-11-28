@@ -1,2 +1,3 @@
-# COChelper
-used to play coc games
+# WitchCraft
+DIsplay virtualization of Witchcraft
+

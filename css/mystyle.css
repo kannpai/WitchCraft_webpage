@@ -65,7 +65,7 @@ table.data>td {
 	position: relative;
 	margin: 24px auto;
 	width: 86%;
-	height: 400px;
+	height: 800px;
 	background-color: #fff;
 	font-size: 20px
 }
@@ -129,6 +129,20 @@ table.data>td {
 	top: 150px;
 }
 
+#illu1 {
+	visibility: hidden;
+}
+#illu2 {
+	visibility: hidden;
+}
+
+#mapid { 
+	position: relative;
+	left: 20%;
+	height: 600px; 
+	width: 700px;
+
+}
 @media screen and (max-width: 420px) {
 
 	table.data {
