@@ -57,9 +57,6 @@ table.data {
 
 }
 
-.kong{
-    margin: 20px 10px 20px 10px;
-}
 
 table.data>td {
 	width: 300px;
@@ -74,16 +71,17 @@ table.data>td {
 	background-color: #fff;
 	font-size: 20px
 }
-
-
-.pageSkill {
+.page_net {
 	position: relative;
 	margin: 24px auto;
-	padding: 10px 40px;
 	width: 86%;
+	height: 800px;
 	background-color: #fff;
-	font-size: 14px;
+	font-size: 20px
 }
+
+
+
 
 .title{
 		font-family:  "Apple Chancery";
@@ -157,29 +155,11 @@ table.data>td {
 	height: 600px; 
 	width: 700px;
 	margin: auto;
-	top: 10%;
+	top: 6%;
 
 }
 @media screen and (max-width: 420px) {
 
-	table.data {
-	left: 4%;
-	}
-
-	nav ul li {
-	width: 24%;
-	}
-
-	#diceOne {
-	position: absolute;
-	left: 12%;
-	top: 150px;
-	}
-
-	#diceTwo {
-	position: absolute;
-	left: 52%;
-	top: 150px;
-	}
+/*change on mobile*/
 
 }
