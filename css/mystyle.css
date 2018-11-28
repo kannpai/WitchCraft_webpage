@@ -131,16 +131,14 @@ table.data>td {
 	color: #fff;
 }
 
-#diceOne {
-	position: absolute;
-	left: 36%;
-	top: 150px;
-}
-
-#diceTwo {
-	position: absolute;
-	left: 56%;
-	top: 150px;
+#title_icon{
+	float:left;
+	color: #fff;
+	border-right:none;
+	background-color: #333;
+	width: 400px;
+	font-family: "Apple Chancery";
+	text-align: left;
 }
 
 #illu1 {
