@@ -5,6 +5,7 @@
 body {
 	display: block;
 	background-color: #eee;
+
 }
 
 a {
@@ -56,6 +57,10 @@ table.data {
 
 }
 
+.kong{
+    margin: 20px 10px 20px 10px;
+}
+
 table.data>td {
 	width: 300px;
 }
@@ -79,6 +84,11 @@ table.data>td {
 	font-size: 14px;
 }
 
+.title{
+		font-family:  "Apple Chancery";
+		font-size: 46px;
+		text-align: center;
+}
 
 .myButton {
 	display: block;
@@ -138,9 +148,10 @@ table.data>td {
 
 #mapid { 
 	position: relative;
-	left: 20%;
 	height: 600px; 
 	width: 700px;
+	margin: auto;
+	top: 10%;
 
 }
 @media screen and (max-width: 420px) {

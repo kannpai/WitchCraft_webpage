@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
 	<title>COC Helper</title>
 	<script type="text/javascript" src="./js/jquery-3.1.0.js"></script>
+	<link rel="stylesheet" href="css/jquery.range.css">
 	<link rel="stylesheet" href="css/normalize.css" type="text/css"/>
 	<link rel="stylesheet" href="css/mystyle.css" type="text/css"/>
 	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
@@ -15,6 +16,7 @@
    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
    crossorigin=""></script>   
    <script src="js/leaflet.ajax.min.js"></script>
+   <script src="js/jquery.range-min.js"></script>
 
 
 
@@ -22,21 +24,42 @@
 <body>
 <nav class="nav">
 	<ul>
-		<li><a href="">MONO</a></li>
-		<li><a href="./skill.html">SKILL</a></li>
-		<li><a href="./roll100.html">ROLL100</a></li>
-		<li><a href="./index.html">DATA</a></li>
+		<li><a href="">Disease</a></li>
+		<li><a href="./netmap.html">Topic map</a></li>
+		<li><a href="./where.html">Where</a></li>
+		<li><a href="./index.html">The witch</a></li>
 	</ul>
 </nav>
-
- <div id="mapid"></div>
 
 
 <div id="headTittle">
 	Witchcraft
 </div>
 
+<div class="title">
+	Where are witches?
+</div>
 
+<div class="page">
+	
+ <div id="mapid"></div>
+
+
+
+</div>
+
+<input type="hidden" class="slider-input range-slider theme-green" value="1530,1645" />
+
+<input type="button" value="updateMap" class="myButton" id="updateMap">
+
+<input type="button" value="Test" class="myButton" id="testbutton">
+
+
+
+
+<div class="title">
+	What happened in the cases?
+</div>
 
 <div class="page">
 
@@ -66,6 +89,31 @@
 <script type="text/javascript" src="./js/RollData.js"></script>
 <script type="text/javascript">
 
+var start_year = 1560;
+var end_year = 1730;
+
+$('.range-slider').jRange({
+    from: 1560,
+    to: 1730,
+    step: 10,
+    scale: [1560,1645,1730],
+    format: '%s',
+    width: 300,
+    showLabels: true,
+    isRange : true,
+    onstatechange: function(value){
+    	var year_range = value.split(',');
+    	start_year = year_range[0];
+    	end_year = year_range[1];
+    	console.log(start_year);
+
+    }
+});
+
+// "156,3247" -> "156"
+// "3247"
+// stringtoint
+
 	var mymap = L.map('mapid').setView([57, -4], 6.5);
 	L.tileLayer
 	('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
@@ -75,27 +123,69 @@
     id: 'mapbox.streets',
     accessToken: 'your.mapbox.access.token'
 }).addTo(mymap);
+// 
 
-	var geojsonLayer = new L.GeoJSON.AJAX("data/convertcsv.geojson");       
-	geojsonLayer.addTo(mymap);
+var WitchIcon = L.icon({
+    iconUrl: 'img/icon.png',
+    iconSize: [13, 20]
+}); 
 
-	// omnivore.csv('data/co_res.csv').addTo(map);
 
-    function addData(id, attrVal){
-     	$("#" + id).html(attrVal);
-     }
+// var geojsonLayerIncidents = new L.GeoJSON.AJAX("data/accusedlocations.geojson",{
+//                                 onEachFeature:function(data){
+//                                    return L.geoJson(data, {
 
-     function attrAdd(){
-	     addData("str", nDice(3,6));
-	     addData("con", nDice(3,6));
-	     addData("pow", nDice(3,6));
-	     addData("dex", nDice(3,6));
-	     addData("app", nDice(3,6));
-	     addData("siz", nDice(2,6) + 6);
-	     addData("int", nDice(2,6) + 6);
-	     addData("edu", nDice(3,6) + 6);
-	     addData("mon", nDice(1,10));
-     }
+//                                       onEachFeature: function (feature, layer) {
+//                                       	year = feature.properties.year;
+//                                       	if(year>start_year && year < end_year){
+//                                       		console.log(year);
+//                                       	}
+//                                         layer.setIcon(WitchIcon);
+//                                       }
+//                                     }).addTo(mymap);
+
+
+//                                 }
+//                             });
+
+var geojsonLayerIncidents
+     $("#updateMap").click(function(){
+if(geojsonLayerIncidents){
+	console.log("there is");
+	geojsonLayerIncidents.clearLayers();
+}
+geojsonLayerIncidents = new L.GeoJSON.AJAX("data/accusedlocations.geojson",{
+                                onEachFeature:function(data){
+                                   return L.geoJson(data, {
+
+                                      onEachFeature: function (feature, layer) {
+                                      	year = feature.properties.year;
+                                      	if(year>start_year && year < end_year){
+                                      		// console.log(year);
+                                        layer.setIcon(WitchIcon);
+                                      	}
+                                      }
+                                    }).addTo(mymap);
+                                }
+                            });
+// if(geojsonLayerIncidents){
+// console.log("there is geojsono")	
+// }else{
+// 	console.log("no")
+// }
+
+	// geojsonLayerIncidents.clearLayers();
+     });
+
+    $("#testbutton").click(function(){
+    	console.log("click")
+    	geojsonLayerIncidents.clearLayers();
+     });
+
+
+
+
+
      $("#button1").click(function(){
 
 		if($("#illu1").css("visibility")!="hidden"){
