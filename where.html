@@ -4,7 +4,7 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-     <title>COC Helper</title>
+     <title>Location</title>
      <script type="text/javascript" src="./js/jquery-3.1.0.js"></script>
      <link rel="stylesheet" href="css/jquery.range.css">
      <link rel="stylesheet" href="css/normalize.css" type="text/css"/>
@@ -24,17 +24,14 @@
 <body>
 <nav class="nav">
      <ul>
-          <li><a href="">Disease</a></li>
+          <!-- <li><a href="https://www.shca.ed.ac.uk/Research/witches/">Related Website</a></li> -->
+          <li><a href="./end.html">End</a></li>
           <li><a href="./netmap.html">Topic map</a></li>
           <li><a href="./where.html">Where</a></li>
-          <li><a href="./index.html">The witch</a></li>
+          <li><a href="./index.html">The Witch</a></li>
+          <li id="title_icon">The Survey of Scottish Witchcraft(1563-1736)</li>
      </ul>
 </nav>
-
-
-<div id="headTittle">
-     Witchcraft
-</div>
 
 <div class="title">
      Where are witches from?
@@ -42,7 +39,7 @@
 
 <div class="page">
      
- <div id="mapid"></div>
+<div id="mapid"></div>
 
 
 
@@ -50,7 +47,6 @@
 
 <div class="range_bar">
 <input type="hidden" class="slider-input range-slider theme-green" value="1530,1645" />
-     
 </div>
 
 <input type="button" value="updateMap" class="myButton" id="updateMap">

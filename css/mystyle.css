@@ -87,6 +87,7 @@ table.data>td {
 		font-family:  "Apple Chancery";
 		font-size: 46px;
 		text-align: center;
+		margin-top: 20px;
 }
 .range_bar{
 	margin:auto;
@@ -105,6 +106,16 @@ table.data>td {
 	color: #fff;
 	font-size: 18px;
 	font-family: 'Century Gothic';
+}
+
+
+.net_title {
+	text-align: center;
+	width: 30%;
+	position: relative;
+	margin: auto;
+	top: 20px;
+
 }
 
 .myButton:hover {
@@ -131,16 +142,21 @@ table.data>td {
 	color: #fff;
 }
 
-#diceOne {
-	position: absolute;
-	left: 36%;
-	top: 150px;
+.reference{
+	width: 50%;
+	position: relative;
+	margin: auto;
+	text-align: center;
 }
 
-#diceTwo {
-	position: absolute;
-	left: 56%;
-	top: 150px;
+#title_icon{
+	float:left;
+	color: #fff;
+	border-right:none;
+	background-color: #333;
+	width: 400px;
+	font-family: "Apple Chancery";
+	text-align: left;
 }
 
 #illu1 {
